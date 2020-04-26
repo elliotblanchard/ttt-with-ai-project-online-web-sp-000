@@ -1,6 +1,18 @@
 require 'pry'
 
 class Board
+
+  WIN_COMBINATIONS = [
+    [0,1,2], # Top row
+    [3,4,5], # Middle row
+    [6,7,8], # Bottom row
+    [0,3,6], # Top column
+    [1,4,7], # Middle column
+    [2,5,8], # Bottom column
+    [0,4,8], # Diag A
+    [6,4,2], # Diag B
+  ]
+    
   attr_accessor :cells
 
   def initialize
@@ -49,6 +61,25 @@ class Board
 
   def taken?(index)
     !(@cells[index.to_i-1].nil? || @cells[index.to_i-1] == " ")
+  end
+
+  def near_win?
+    WIN_COMBINATIONS.any? do |win_state|
+      win_state.each do |index|
+        counter_x = 0
+        counter_y = 0
+        if @board.taken?(@index+1)
+          if @board.cells[index] == "X"
+            counter_x += 1
+          else
+            counter_y += 1
+          end
+        end
+        if counter_x == 2 || counter_y ==2
+          return "Near Win!"
+        end
+      end
+    end
   end
 
   def valid_move?(input)

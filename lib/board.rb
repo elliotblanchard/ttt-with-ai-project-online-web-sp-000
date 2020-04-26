@@ -70,7 +70,7 @@ class Board
         counter_y = 0
         if taken?(index+1)
           if cells[index] == "X"
-            counter_x += 1s
+            counter_x += 1
           else
             counter_y += 1
           end

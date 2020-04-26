@@ -68,7 +68,7 @@ class Board
     WIN_COMBINATIONS.each do |win_state|
       win_state.each do |index|
         counter = 0
-        if taken?(index+1)
+        if taken?(index)
           counter += 1
         end
       end

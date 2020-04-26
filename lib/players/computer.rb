@@ -13,6 +13,14 @@ module Players
       end
     end
 
+    def side_free?(board)
+      CORNER_COMBINATIONS.any? do |index|
+        if (board.cells[index] != "X") && (board.cells[index] != "O")
+          return index
+        end
+      end
+    end
+
     def move(board)
       #Can I make a move that will win the game?
       #Is the opponent about to win? Block!

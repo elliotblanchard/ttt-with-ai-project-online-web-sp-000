@@ -82,6 +82,7 @@ class Board
         target_index = empty_index
       end
     end
+    target_index
   end
 
   def valid_move?(input)

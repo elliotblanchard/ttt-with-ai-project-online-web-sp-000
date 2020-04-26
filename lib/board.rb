@@ -66,20 +66,11 @@ class Board
   def near_win?
     WIN_COMBINATIONS.any? do |win_state|
       win_state.each do |index|
-        counter_x = 0
-        counter_y = 0
+        counter = 0
         if taken?(index+1)
-          if cells[index] == "X"
-            counter_x += 1
-          else
-            counter_y += 1
-          end
+          counter += 1
         end
-        if counter_x == 2 || counter_y ==2
-          return "Near Win!"
-        else
-          return "Not near win"
-        end
+        return counter
       end
     end
   end

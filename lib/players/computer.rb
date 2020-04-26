@@ -28,16 +28,17 @@ module Players
         my_move = board.near_win?.to_i+1
       elsif corner_free?(board)
         #If a corner space is free, take it
-        puts "Corner free"
         my_move = corner_free?(board)+1
+        puts "Corner free: #{my_move}"
       elsif (board.cells[4] != "X") && (board.cells[4] != "O")
         #If the center is free, take it
         my_move = 5
+        puts "Center free: #{my_move}"
       else
         #Otherwise, take a side space
         my_move = side_free?(board)+1
+        puts "Side free: #{my_move}"
       end
-
       #my_move = rand(8)+1
       my_move.to_s
     end

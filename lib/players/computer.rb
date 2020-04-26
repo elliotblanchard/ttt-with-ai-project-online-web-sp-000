@@ -35,8 +35,9 @@ module Players
         my_move = corner_free?(board)+1
         puts "Corner free: #{my_move}"
       elsif (board.cells[4] != "X") && (board.cells[4] != "O")
+        #Take center space
         my_move = 5
-        puts "Center is open: #{my_move}"        
+        puts "Center is open: #{my_move}"
       else
         #Otherwise, take a side space
         my_move = side_free?(board)+1

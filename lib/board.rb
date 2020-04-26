@@ -68,13 +68,7 @@ class Board
       occupied_spaces = 0
       empty_spaces = 0
       win_state.each do |index|
-        if taken?(index-1)
-          puts "#{index} is occupied"
-          occupied_spaces += 1
-        else
-          empty_spaces += 1
-          puts "#{index} is empty"
-        end
+        puts(board.cell[index])
       end
       #puts "Win state: #{win_state} and Occupied spaces: #{occupied_spaces} and empty spaces: #{empty_spaces}"
     end

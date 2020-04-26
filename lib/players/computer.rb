@@ -8,7 +8,7 @@ module Players
 
       #Can I make a move that will win the game?
       #Is the opponent about to win? Block!
-      if board.near_win?
+      if board.near_win? != nil
         my_move = board.near_win?
       else
         my_move = rand(8)+1

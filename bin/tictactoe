@@ -13,7 +13,7 @@ else
   game_type = 1
 end
 if game_type == 1
-  puts "Should the computer go first or second and be 'X'? Please enter 'first' or 'second'"
+  puts "Should the computer go first and be 'X' or second and be 'O'? Please enter 'first' or 'second'"
   input = gets.strip
   if input == "first"
     computer_first = true

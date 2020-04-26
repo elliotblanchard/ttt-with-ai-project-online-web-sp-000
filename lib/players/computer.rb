@@ -12,7 +12,9 @@ module Players
         my_move = board.near_win?.to_i+1
       elsif corner_free?
         #If a corner space is free, take it
-      elseif (board.cells[4] != "X") && (board.cells[4] != "O")
+        puts "Corner free"
+        my_move = corner_free?
+      elsif (board.cells[4] != "X") && (board.cells[4] != "O")
         #If the center is free, take it
         my_move = 5
       else
@@ -27,7 +29,7 @@ module Players
 
   def corner_free?
     CORNER_COMBINATIONS.any? do |index|
-      if (board.cells[index] != "X") && (board.cells[index] != "O")  
+      if (board.cells[index] != "X") && (board.cells[index] != "O")
         return index
       end
     end

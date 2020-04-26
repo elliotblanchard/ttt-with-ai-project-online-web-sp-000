@@ -75,7 +75,7 @@ class Board
         end
       end
       if occupied_spaces == 2
-        puts "you need to move to: #{empty_index}"
+        puts "you need to move to: #{empty_index+1}"
       end
     end
   end

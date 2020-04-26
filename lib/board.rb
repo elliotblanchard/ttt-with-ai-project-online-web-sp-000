@@ -70,13 +70,15 @@ class Board
         counter_y = 0
         if taken?(index+1)
           if cells[index] == "X"
-            counter_x += 1
+            counter_x += 1s
           else
             counter_y += 1
           end
         end
         if counter_x == 2 || counter_y ==2
           return "Near Win!"
+        else
+          return "Not near win"
         end
       end
     end

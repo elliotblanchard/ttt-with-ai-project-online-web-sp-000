@@ -14,7 +14,7 @@ module Players
     end
 
     def side_free?(board)
-      CORNER_COMBINATIONS.any? do |index|
+      SIDE_COMBINATIONS.any? do |index|
         if (board.cells[index] != "X") && (board.cells[index] != "O")
           return index
         end

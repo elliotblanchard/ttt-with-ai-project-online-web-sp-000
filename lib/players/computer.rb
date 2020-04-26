@@ -27,8 +27,9 @@ module Players
       if board.near_win? != nil
         my_move = board.near_win?.to_i+1
         puts "Block: #{my_move}"
-      elsif #second turn and center is free
+      elsif board.turn_count == 1 && ((board.cells[4] != "X") && (board.cells[4] != "O"))
         my_move = 5
+        puts "Second move center is open: #{my_move}"
       elsif corner_free?(board)
         #If a corner space is free, take it
         my_move = corner_free?(board)+1

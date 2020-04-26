@@ -26,22 +26,22 @@ module Players
       #Is the opponent about to win? Block!
       if board.near_win? != nil
         my_move = board.near_win?.to_i+1
-        puts "Block: #{my_move}"
+        #puts "Block: #{my_move}"
       elsif board.turn_count == 1 && ((board.cells[4] != "X") && (board.cells[4] != "O"))
         my_move = 5
-        puts "Second move center is open: #{my_move}"
+        #puts "Second move center is open: #{my_move}"
       elsif corner_free?(board)
         #If a corner space is free, take it
         my_move = corner_free?(board)+1
-        puts "Corner free: #{my_move}"
+        #puts "Corner free: #{my_move}"
       elsif (board.cells[4] != "X") && (board.cells[4] != "O")
         #Take center space
         my_move = 5
-        puts "Center is open: #{my_move}"
+        #puts "Center is open: #{my_move}"
       else
         #Otherwise, take a side space
         my_move = side_free?(board)+1
-        puts "Side free: #{my_move}"
+        #puts "Side free: #{my_move}"
       end
       my_move.to_s
     end

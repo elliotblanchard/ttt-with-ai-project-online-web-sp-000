@@ -37,22 +37,10 @@ module Players
       elsif (board.cells[4] != "X") && (board.cells[4] != "O")
         my_move = 5
         puts "Center is open: #{my_move}"        
-      #elsif (board.cells[4] != "X") && (board.cells[4] != "O")
-        #If the center is free, take it
-      #  my_move = 5
-      #  puts "Center free: #{my_move}"
       else
-        my_move = 1
-        board.cells.each do |index|
-          puts "#{index} is #{board.cells[index]}"
-          if (board.cells[index] != "X") && (board.cells[index] != "O")
-            my_move = board.cells[index] + 1
-          end
-        end
-        #my_move = rand(8)+1
         #Otherwise, take a side space
-        #my_move = side_free?(board)+1
-        #puts "Side free: #{my_move}"
+        my_move = side_free?(board)+1
+        puts "Side free: #{my_move}"
       end
       my_move.to_s
     end

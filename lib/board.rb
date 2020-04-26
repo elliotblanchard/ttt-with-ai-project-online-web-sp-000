@@ -68,7 +68,7 @@ class Board
       occupied_spaces = 0
       empty_spaces = 0
       win_state.each do |index|
-        puts(board.cell[index])
+        puts($cells[index])
       end
       #puts "Win state: #{win_state} and Occupied spaces: #{occupied_spaces} and empty spaces: #{empty_spaces}"
     end

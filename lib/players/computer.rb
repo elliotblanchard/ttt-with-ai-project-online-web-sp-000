@@ -26,6 +26,7 @@ module Players
       #Is the opponent about to win? Block!
       if board.near_win? != nil
         my_move = board.near_win?.to_i+1
+        puts "Block: #{my_move}"
       elsif corner_free?(board)
         #If a corner space is free, take it
         my_move = corner_free?(board)+1

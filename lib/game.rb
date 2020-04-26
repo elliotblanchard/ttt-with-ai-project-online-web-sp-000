@@ -58,25 +58,6 @@ class Game
     end
   end
 
-  def self.near_win?
-    WIN_COMBINATIONS.any? do |win_state|
-      win_state.each do |index|
-        counter_x = 0
-        counter_y = 0
-        if @board.taken?(@index+1)
-          if @board.cells[index] == "X"
-            counter_x += 1
-          else
-            counter_y += 1
-          end
-        end
-        if counter_x == 2 || counter_y ==2
-          return "Near Win!"
-        end
-      end
-    end
-  end
-
   def draw?
     if @board.full? && !won?
       return true

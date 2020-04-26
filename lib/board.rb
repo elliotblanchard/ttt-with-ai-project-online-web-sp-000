@@ -79,8 +79,8 @@ class Board
         end
       end
       if occupied_x == 2 || occupied_o == 2
-        puts "Empty index: #{empty_index} and Target index: #{target_index}"
         target_index = empty_index
+        puts "Empty index: #{empty_index} and Target index: #{target_index}"
       end
     end
     target_index

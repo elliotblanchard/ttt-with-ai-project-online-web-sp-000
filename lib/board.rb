@@ -69,12 +69,12 @@ class Board
       empty_index = " "
       win_state.each do |index|
         if @cells[index] == "X" || @cells[index] == "O"
-          occupied_space += 1
+          occupied_spaces += 1
         else
           empty_index = index
         end
       end
-      if occupied_space == 2
+      if occupied_spaces == 2
         puts "you need to move to: #{empty_index}"
       end
     end

@@ -27,7 +27,7 @@ module Players
         my_move = 5
       else
         #Otherwise, take a side space
-        my_move = board.side_free?
+        my_move = side_free?(board)+1
       end
 
       #my_move = rand(8)+1

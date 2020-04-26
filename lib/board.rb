@@ -66,11 +66,17 @@ class Board
   def near_win?
     WIN_COMBINATIONS.each do |win_state|
       occupied_spaces = 0
-      empty_spaces = 0
+      empty_index = " "
       win_state.each do |index|
-        puts("Index #{index} is: #{@cells[index]}")
+        if @cells[index] == "X" || @cells[index] == "O"
+          occupied_space += 1
+        else
+          empty_index = index
+        end
       end
-      #puts "Win state: #{win_state} and Occupied spaces: #{occupied_spaces} and empty spaces: #{empty_spaces}"
+      if occupied_space == 2
+        puts "you need to move to: #{empty_index}"
+      end
     end
   end
 

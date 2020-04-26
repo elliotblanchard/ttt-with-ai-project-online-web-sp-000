@@ -2,10 +2,9 @@ require 'pry'
 
 module Players
   class Computer < Player
+    CORNER_COMBINATIONS = [0,2,6,8]
+    SIDE_COMBINATIONS = [1,3,5,7]
     def move(board)
-      CORNER_COMBINATIONS = [0,2,6,8]
-      SIDE_COMBINATIONS = [1,3,5,7]
-
       #Can I make a move that will win the game?
       #Is the opponent about to win? Block!
       if board.near_win? != nil

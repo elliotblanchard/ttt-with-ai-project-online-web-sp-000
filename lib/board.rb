@@ -64,6 +64,7 @@ class Board
   end
 
   def near_win?
+    counter = 0
     WIN_COMBINATIONS.each do |win_state|
       win_state.each do |index|
         counter = 0
@@ -71,7 +72,7 @@ class Board
           counter += 1
         end
       end
-      puts "Counter is #{counter}"
+      puts counter
     end
   end
 

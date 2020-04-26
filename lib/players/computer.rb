@@ -12,7 +12,7 @@ module Players
       elsif corner_free?
         #If a corner space is free, take it
         puts "Corner free"
-        my_move = corner_free?
+        my_move = corner_free?+1
       elsif (board.cells[4] != "X") && (board.cells[4] != "O")
         #If the center is free, take it
         my_move = 5

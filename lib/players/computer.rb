@@ -16,7 +16,6 @@ module Players
     def side_free?(board)
       SIDE_COMBINATIONS.any? do |index|
         if (board.cells[index] != "X") && (board.cells[index] != "O")
-          puts "Index is #{index}"
           return index
         end
       end

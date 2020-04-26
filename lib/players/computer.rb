@@ -30,16 +30,19 @@ module Players
         #If a corner space is free, take it
         my_move = corner_free?(board)+1
         puts "Corner free: #{my_move}"
-      elsif (board.cells[4] != "X") && (board.cells[4] != "O")
+      #elsif (board.cells[4] != "X") && (board.cells[4] != "O")
         #If the center is free, take it
-        my_move = 5
-        puts "Center free: #{my_move}"
+      #  my_move = 5
+      #  puts "Center free: #{my_move}"
       else
+        board.cells.each do |index|
+          puts "#{index} is #{board.cells[index]}"
+        end
+        my_move = rand(8)+1
         #Otherwise, take a side space
-        my_move = side_free?(board)+1
-        puts "Side free: #{my_move}"
+        #my_move = side_free?(board)+1
+        #puts "Side free: #{my_move}"
       end
-      #my_move = rand(8)+1
       my_move.to_s
     end
   end

@@ -12,10 +12,31 @@ elsif input == "2"
 else
   game_type = 1
 end
+if game_type == 1
+  puts "Should the computer go first or second and be 'X'? Please enter 'first' or 'second'"
+  input = gets.strip
+  if input == "first"
+    computer_first = true
+  else
+    computer_first = false
+  end
+end
 
-
-player_1 = Players::Computer.new("O")
-player_2 = Players::Human.new("X")
+if game_type == 0
+  player_1 = Players::Computer.new("X")
+  player_2 = Players::Computer.new("O")
+elsif game_type == 1
+  if computer_first == true
+    player_1 = Players::Computer.new("X")
+    player_2 = Players::Human.new("O")
+  else
+    player_1 = Players::Human.new("X")
+    player_2 = Players::Computer.new("O")
+  end
+else
+  player_1 = Players::Human.new("X")
+  player_2 = Players::Human.new("O")
+end
 board = Board.new
 
 game = Game.new(player_1,player_2,board)

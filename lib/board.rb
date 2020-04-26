@@ -65,13 +65,16 @@ class Board
 
   def near_win?
     WIN_COMBINATIONS.each do |win_state|
-      counter = 0
+      occupied_spaces = 0
+      empty_spaces = 0
       win_state.each do |index|
         if taken?(index)
-          counter += 1
+          occupied_spaces += 1
+        else
+          empty_spaces += 1
         end
       end
-      puts "Win state: #{win_state} and counter: #{counter}"
+      puts "Win state: #{win_state} and Occupied spaces: #{occupied_spaces} and empty spaces: #{empty_spaces}"
     end
   end
 

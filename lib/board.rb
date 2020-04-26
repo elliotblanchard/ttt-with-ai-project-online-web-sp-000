@@ -12,7 +12,7 @@ class Board
     [0,4,8], # Diag A
     [6,4,2], # Diag B
   ]
-    
+
   attr_accessor :cells
 
   def initialize
@@ -68,8 +68,8 @@ class Board
       win_state.each do |index|
         counter_x = 0
         counter_y = 0
-        if @board.taken?(@index+1)
-          if @board.cells[index] == "X"
+        if taken?(index+1)
+          if cells[index] == "X"
             counter_x += 1
           else
             counter_y += 1

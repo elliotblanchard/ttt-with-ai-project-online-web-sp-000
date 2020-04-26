@@ -73,8 +73,8 @@ class Board
         else
           empty_spaces += 1
         end
+      puts "Win state: #{win_state} and Occupied spaces: #{occupied_spaces} and empty spaces: #{empty_spaces}"        
       end
-      puts "Win state: #{win_state} and Occupied spaces: #{occupied_spaces} and empty spaces: #{empty_spaces}"
     end
   end
 

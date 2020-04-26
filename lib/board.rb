@@ -77,7 +77,7 @@ class Board
           empty_index = index
         end
       end
-      if occupied_x == 2 || occupied_y == 2
+      if occupied_x == 2 || occupied_o == 2
         puts "you need to move to: #{empty_index+1}"
       end
     end

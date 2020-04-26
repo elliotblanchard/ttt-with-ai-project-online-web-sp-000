@@ -66,11 +66,7 @@ class Board
   def near_win?
     WIN_COMBINATIONS.any? do |win_state|
       win_state.each do |index|
-        counter = 0
-        if taken?(index+1)
-          counter += 1
-        end
-        return counter
+        puts "#{index} taken? is #{taken?(index+1)}"
       end
     end
   end

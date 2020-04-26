@@ -58,7 +58,7 @@ class Game
     end
   end
 
-  def near_win?
+  def self.near_win?
     WIN_COMBINATIONS.any? do |win_state|
       win_state.each do |index|
         counter_x = 0

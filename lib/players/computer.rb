@@ -7,8 +7,8 @@ module Players
       #binding.pry
 
       #Can I make a move that will win the game?
-      board.near_win?
       #Is the opponent about to win? Block!
+      puts board.near_win?
 
       #If a corner space is free, take it
 

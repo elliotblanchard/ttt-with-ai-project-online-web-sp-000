@@ -5,8 +5,6 @@ module Players
     def move(board)
       #random for now
       #binding.pry
-      #my_move = rand(8)+1
-      #my_move.to_s
 
       #Can I make a move that will win the game?
       puts board.near_win?
@@ -17,6 +15,9 @@ module Players
       #If the center is free, take it
 
       #Otherwise, take a side space
+
+      my_move = rand(8)+1
+      my_move.to_s
     end
   end
 end

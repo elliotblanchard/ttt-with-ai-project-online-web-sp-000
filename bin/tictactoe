@@ -3,6 +3,16 @@
 require_relative '../config/environment'
 
 puts "Welcome to Tic Tac Toe"
+puts "Do you want to play 0, 1, or 2 player game? Please enter '0', '1', or '2'"
+input = gets.strip
+if input == "0"
+  game_type = 0
+elsif input == "2"
+  game_type = 2
+else
+  game_type = 1
+end
+
 
 player_1 = Players::Computer.new("O")
 player_2 = Players::Human.new("X")

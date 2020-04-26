@@ -64,6 +64,7 @@ class Board
   end
 
   def near_win?
+    target_index = nil
     WIN_COMBINATIONS.each do |win_state|
       occupied_x = 0
       occupied_o = 0
@@ -78,7 +79,7 @@ class Board
         end
       end
       if occupied_x == 2 || occupied_o == 2
-        return empty_index
+        target_index = empty_index
       end
     end
   end

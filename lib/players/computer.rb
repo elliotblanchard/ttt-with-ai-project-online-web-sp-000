@@ -8,15 +8,16 @@ module Players
 
       #Can I make a move that will win the game?
       #Is the opponent about to win? Block!
-      puts board.near_win?
-
+      if board.near_win?
+        my_move = board.near_win?
+      else
+        my_move = rand(8)+1
+      end
       #If a corner space is free, take it
 
       #If the center is free, take it
 
       #Otherwise, take a side space
-
-      my_move = rand(8)+1
       my_move.to_s
     end
   end

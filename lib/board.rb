@@ -68,7 +68,7 @@ class Board
       occupied_spaces = 0
       empty_spaces = 0
       win_state.each do |index|
-        if taken?(index)
+        if taken?(index-1)
           puts "#{index} is occupied"
           occupied_spaces += 1
         else

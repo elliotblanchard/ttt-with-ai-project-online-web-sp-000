@@ -4,6 +4,15 @@ module Players
   class Computer < Player
     CORNER_COMBINATIONS = [0,2,6,8]
     SIDE_COMBINATIONS = [1,3,5,7]
+
+    def corner_free?
+      CORNER_COMBINATIONS.any? do |index|
+        if (board.cells[index] != "X") && (board.cells[index] != "O")
+          return index
+        end
+      end
+    end
+    
     def move(board)
       #Can I make a move that will win the game?
       #Is the opponent about to win? Block!
@@ -23,14 +32,6 @@ module Players
 
       #my_move = rand(8)+1
       my_move.to_s
-    end
-  end
-
-  def corner_free?
-    CORNER_COMBINATIONS.any? do |index|
-      if (board.cells[index] != "X") && (board.cells[index] != "O")
-        return index
-      end
     end
   end
 end

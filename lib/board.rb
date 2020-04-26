@@ -71,7 +71,7 @@ class Board
           counter += 1
         end
       end
-      puts counter
+      puts "Win state: #{win_state} and counter: #{counter}"
     end
   end
 
